@@ -1,0 +1,2000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Why Choose Me — Muwahad</title>
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root{
+    --cream:#FBF8F5;
+    --navy:#05121D;
+    --navy-2:#0A2231;
+
+    --gold:#C4914E;
+    --gold-light:#DEB680;
+
+    --warm-gray:#D3CFCA;
+    --dark-gray:#303132;
+
+    --white:#FFFFFF;
+
+    --shadow:
+        0 25px 70px rgba(5,18,29,.10);
+
+    --shadow-hover:
+        0 35px 85px rgba(5,18,29,.18),
+        0 12px 40px rgba(196,145,78,.14);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    background:var(--cream);
+    color:var(--navy);
+
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.page{
+    min-height:100vh;
+    position:relative;
+    overflow:hidden;
+}
+
+
+/* =========================================================
+   BACKGROUND GLOWS
+========================================================= */
+
+.bg-glow{
+    position:absolute;
+    border-radius:50%;
+    pointer-events:none;
+    filter:blur(3px);
+    z-index:0;
+}
+
+.bg-glow.one{
+    width:520px;
+    height:520px;
+
+    top:-270px;
+    right:-190px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(196,145,78,.17) 0%,
+            rgba(196,145,78,.07) 38%,
+            transparent 70%
+        );
+}
+
+.bg-glow.two{
+    width:600px;
+    height:600px;
+
+    bottom:-330px;
+    left:-250px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(5,18,29,.09) 0%,
+            rgba(5,18,29,.04) 40%,
+            transparent 72%
+        );
+}
+
+
+/* =========================================================
+   BACKGROUND 3D SHAPES
+========================================================= */
+
+.bg-shape{
+    position:absolute;
+    pointer-events:none;
+    z-index:1;
+    opacity:.45;
+}
+
+.bg-shape.one{
+    width:170px;
+    height:170px;
+
+    top:16%;
+    left:-75px;
+
+    border:1px solid rgba(196,145,78,.45);
+
+    transform:
+        rotate(35deg)
+        perspective(700px)
+        rotateX(25deg);
+
+    border-radius:28px;
+}
+
+.bg-shape.two{
+    width:110px;
+    height:110px;
+
+    top:45%;
+    right:4%;
+
+    border:1px solid rgba(5,18,29,.20);
+
+    border-radius:28px;
+
+    transform:
+        rotate(22deg)
+        perspective(600px)
+        rotateY(35deg);
+}
+
+.bg-shape.three{
+    width:82px;
+    height:82px;
+
+    bottom:10%;
+    left:9%;
+
+    border:1px solid rgba(196,145,78,.45);
+
+    border-radius:50%;
+
+    transform:
+        perspective(500px)
+        rotateX(55deg)
+        rotateY(25deg);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    position:relative;
+    z-index:3;
+
+    padding:
+        75px
+        6%
+        50px;
+
+    text-align:center;
+}
+
+.eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+
+    padding:9px 17px;
+
+    border-radius:999px;
+
+    background:
+        rgba(196,145,78,.10);
+
+    border:
+        1px solid rgba(196,145,78,.28);
+
+    color:var(--gold);
+
+    font-size:11px;
+    font-weight:800;
+
+    letter-spacing:1.8px;
+    text-transform:uppercase;
+
+    margin-bottom:22px;
+}
+
+.eyebrow::before{
+    content:"✦";
+
+    font-size:13px;
+
+    animation:
+        sparkle 2.2s ease-in-out infinite;
+}
+
+@keyframes sparkle{
+
+    0%,
+    100%{
+        transform:scale(1) rotate(0deg);
+    }
+
+    50%{
+        transform:scale(1.25) rotate(15deg);
+    }
+}
+
+.hero h1{
+    font-size:
+        clamp(48px, 8vw, 88px);
+
+    line-height:.95;
+
+    letter-spacing:-5px;
+
+    font-weight:950;
+
+    color:var(--navy);
+
+    margin-bottom:22px;
+}
+
+.hero h1 span{
+    color:var(--gold);
+}
+
+.hero p{
+    max-width:690px;
+
+    margin:auto;
+
+    color:#666A6C;
+
+    font-size:16px;
+
+    line-height:1.85;
+}
+
+
+/* =========================================================
+   WHY CHOOSE SECTION
+========================================================= */
+
+.why-section{
+    position:relative;
+    z-index:3;
+
+    padding:
+        15px
+        6%
+        110px;
+}
+
+.why-grid{
+    width:100%;
+    max-width:1380px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0,1fr));
+
+    gap:28px;
+
+    perspective:1800px;
+}
+
+
+/* =========================================================
+   CARD WRAPPER
+========================================================= */
+
+.reason-item{
+    perspective:1600px;
+}
+
+.reason-card{
+    position:relative;
+
+    min-height:390px;
+
+    background:var(--white);
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+    border:
+        1px solid rgba(5,18,29,.06);
+
+    transform-style:preserve-3d;
+
+    transition:
+        transform .65s cubic-bezier(.2,.75,.2,1),
+        box-shadow .5s ease;
+
+    will-change:transform;
+}
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
+.reason-card:hover{
+    box-shadow:var(--shadow-hover);
+
+    transform:
+        translateY(-8px)
+        rotateX(2deg)
+        rotateY(-2deg);
+}
+
+
+/* =========================================================
+   CARD TOP VISUAL
+========================================================= */
+
+.reason-visual{
+    position:relative;
+
+    height:175px;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--navy),
+            #0A2231 65%,
+            #102E40
+        );
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    transform-style:preserve-3d;
+}
+
+.reason-visual::before{
+    content:"";
+
+    position:absolute;
+
+    width:230px;
+    height:230px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(196,145,78,.30),
+            transparent 68%
+        );
+
+    filter:blur(4px);
+
+    transform:
+        translateZ(15px);
+}
+
+.reason-visual::after{
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            120deg,
+            transparent 0%,
+            rgba(255,255,255,.05) 48%,
+            transparent 55%
+        );
+
+    transform:
+        translateX(-100%);
+
+    transition:
+        transform .8s ease;
+}
+
+.reason-card:hover .reason-visual::after{
+    transform:
+        translateX(100%);
+}
+
+
+/* =========================================================
+   CARD NUMBER
+========================================================= */
+
+.reason-number{
+    position:absolute;
+
+    top:18px;
+    left:18px;
+
+    z-index:5;
+
+    padding:7px 11px;
+
+    border-radius:10px;
+
+    background:
+        rgba(255,255,255,.09);
+
+    border:
+        1px solid rgba(255,255,255,.12);
+
+    color:
+        rgba(255,255,255,.75);
+
+    font-size:10px;
+
+    font-weight:800;
+
+    letter-spacing:1px;
+
+    backdrop-filter:blur(10px);
+}
+
+
+/* =========================================================
+   CARD LABEL
+========================================================= */
+
+.reason-label{
+    position:absolute;
+
+    top:18px;
+    right:18px;
+
+    z-index:5;
+
+    padding:7px 11px;
+
+    border-radius:999px;
+
+    background:
+        rgba(196,145,78,.15);
+
+    border:
+        1px solid rgba(222,182,128,.25);
+
+    color:var(--gold-light);
+
+    font-size:9px;
+
+    font-weight:800;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+    backdrop-filter:blur(10px);
+}
+
+
+/* =========================================================
+   3D ICONS
+========================================================= */
+
+.icon-cube{
+    width:82px;
+    height:82px;
+
+    border-radius:19px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #DEB680,
+            #B77F38
+        );
+
+    box-shadow:
+        -15px 18px 0 rgba(139,92,39,.32),
+        18px 22px 35px rgba(0,0,0,.28);
+
+    transform:
+        perspective(600px)
+        rotateX(55deg)
+        rotateY(-35deg)
+        rotateZ(28deg)
+        translateZ(40px);
+
+    transition:
+        transform .7s cubic-bezier(.2,.75,.2,1);
+}
+
+.reason-card:hover .icon-cube{
+    transform:
+        perspective(600px)
+        rotateX(25deg)
+        rotateY(35deg)
+        rotateZ(8deg)
+        translateZ(55px)
+        scale(1.08);
+}
+
+
+/* =========================================================
+   ICON RING
+========================================================= */
+
+.icon-ring{
+    width:105px;
+    height:105px;
+
+    border:
+        16px solid var(--gold-light);
+
+    border-radius:50%;
+
+    box-shadow:
+        inset 0 0 20px rgba(0,0,0,.20),
+        0 25px 45px rgba(0,0,0,.25);
+
+    transform:
+        perspective(600px)
+        rotateX(60deg)
+        rotateY(-20deg)
+        rotateZ(20deg)
+        translateZ(35px);
+
+    transition:
+        transform .7s ease;
+}
+
+.reason-card:hover .icon-ring{
+    transform:
+        perspective(600px)
+        rotateX(30deg)
+        rotateY(30deg)
+        rotateZ(100deg)
+        translateZ(50px)
+        scale(1.08);
+}
+
+
+/* =========================================================
+   ICON SPHERE
+========================================================= */
+
+.icon-sphere{
+    width:92px;
+    height:92px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle at 30% 25%,
+            #FFF1D9 0%,
+            #DEB680 23%,
+            #C4914E 55%,
+            #805521 100%
+        );
+
+    box-shadow:
+        inset -14px -18px 25px rgba(0,0,0,.20),
+        0 28px 45px rgba(0,0,0,.25);
+
+    transform:
+        translateZ(45px);
+
+    transition:
+        transform .7s ease;
+}
+
+.reason-card:hover .icon-sphere{
+    transform:
+        translateZ(65px)
+        rotateY(35deg)
+        scale(1.08);
+}
+
+
+/* =========================================================
+   ICON DIAMOND
+========================================================= */
+
+.icon-diamond{
+    width:82px;
+    height:82px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #E6C28F,
+            #B77F38
+        );
+
+    clip-path:
+        polygon(
+            50% 0%,
+            100% 50%,
+            50% 100%,
+            0% 50%
+        );
+
+    filter:
+        drop-shadow(
+            20px 25px 20px rgba(0,0,0,.25)
+        );
+
+    transform:
+        perspective(600px)
+        rotateX(35deg)
+        rotateY(-35deg)
+        translateZ(45px);
+
+    transition:
+        transform .7s ease;
+}
+
+.reason-card:hover .icon-diamond{
+    transform:
+        perspective(600px)
+        rotateX(20deg)
+        rotateY(35deg)
+        rotateZ(35deg)
+        translateZ(65px)
+        scale(1.08);
+}
+
+
+/* =========================================================
+   ICON STACK
+========================================================= */
+
+.icon-stack{
+    position:relative;
+
+    width:110px;
+    height:90px;
+
+    transform:
+        translateZ(35px);
+
+    transition:
+        transform .7s ease;
+}
+
+.icon-stack span{
+    position:absolute;
+
+    width:70px;
+    height:70px;
+
+    border-radius:16px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #DEB680,
+            #B77F38
+        );
+
+    box-shadow:
+        0 20px 35px rgba(0,0,0,.25);
+
+    transform:
+        rotate(45deg);
+}
+
+.icon-stack span:nth-child(1){
+    left:0;
+    top:15px;
+}
+
+.icon-stack span:nth-child(2){
+    left:20px;
+    top:5px;
+
+    opacity:.78;
+}
+
+.icon-stack span:nth-child(3){
+    left:40px;
+    top:-5px;
+
+    opacity:.55;
+}
+
+.reason-card:hover .icon-stack{
+    transform:
+        translateZ(60px)
+        rotateY(20deg)
+        rotateX(12deg);
+}
+
+
+/* =========================================================
+   ICON TARGET
+========================================================= */
+
+.icon-target{
+    width:100px;
+    height:100px;
+
+    border:
+        13px solid rgba(222,182,128,.9);
+
+    border-radius:50%;
+
+    position:relative;
+
+    box-shadow:
+        0 25px 45px rgba(0,0,0,.25);
+
+    transform:
+        translateZ(40px);
+
+    transition:
+        transform .7s ease;
+}
+
+.icon-target::before{
+    content:"";
+
+    position:absolute;
+
+    width:48px;
+    height:48px;
+
+    left:50%;
+    top:50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    border:
+        11px solid var(--gold);
+
+    border-radius:50%;
+}
+
+.icon-target::after{
+    content:"";
+
+    position:absolute;
+
+    width:15px;
+    height:15px;
+
+    left:50%;
+    top:50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    background:
+        var(--gold-light);
+
+    border-radius:50%;
+}
+
+.reason-card:hover .icon-target{
+    transform:
+        translateZ(60px)
+        rotateZ(35deg)
+        scale(1.08);
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.reason-content{
+    position:relative;
+
+    padding:
+        24px
+        25px
+        27px;
+
+    min-height:215px;
+
+    background:var(--white);
+
+    display:flex;
+
+    flex-direction:column;
+}
+
+.reason-content h3{
+    font-size:22px;
+
+    line-height:1.2;
+
+    letter-spacing:-.5px;
+
+    font-weight:900;
+
+    color:var(--navy);
+
+    margin-bottom:12px;
+}
+
+.reason-content h3 span{
+    color:var(--gold);
+}
+
+.reason-content p{
+    font-size:13px;
+
+    line-height:1.75;
+
+    color:#6C7072;
+
+    max-width:340px;
+}
+
+
+/* =========================================================
+   CARD FOOTER
+========================================================= */
+
+.reason-footer{
+    margin-top:auto;
+
+    padding-top:20px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+}
+
+.reason-line{
+    width:48px;
+    height:3px;
+
+    border-radius:999px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--gold),
+            var(--gold-light)
+        );
+
+    transition:
+        width .4s ease;
+}
+
+.reason-card:hover .reason-line{
+    width:80px;
+}
+
+.reason-arrow{
+    width:32px;
+    height:32px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    background:
+        rgba(196,145,78,.09);
+
+    color:var(--gold);
+
+    font-size:14px;
+
+    transition:
+        transform .4s ease,
+        background .4s ease;
+}
+
+.reason-card:hover .reason-arrow{
+    transform:
+        translateZ(15px)
+        rotate(-45deg);
+
+    background:
+        rgba(196,145,78,.16);
+}
+
+
+/* =========================================================
+   BOTTOM STATEMENT
+========================================================= */
+
+.bottom-message{
+    position:relative;
+
+    z-index:3;
+
+    max-width:980px;
+
+    margin:
+        10px
+        auto
+        100px;
+
+    padding:
+        38px
+        42px;
+
+    border-radius:26px;
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--navy),
+            var(--navy-2)
+        );
+
+    box-shadow:
+        0 30px 75px rgba(5,18,29,.18);
+
+    text-align:center;
+
+    overflow:hidden;
+}
+
+.bottom-message::before{
+    content:"";
+
+    position:absolute;
+
+    width:260px;
+    height:260px;
+
+    right:-100px;
+    top:-130px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(196,145,78,.30),
+            transparent 70%
+        );
+}
+
+.bottom-message h2{
+    position:relative;
+
+    z-index:2;
+
+    color:white;
+
+    font-size:
+        clamp(25px,4vw,42px);
+
+    letter-spacing:-1.5px;
+
+    margin-bottom:10px;
+}
+
+.bottom-message h2 span{
+    color:var(--gold-light);
+}
+
+.bottom-message p{
+    position:relative;
+
+    z-index:2;
+
+    color:
+        rgba(255,255,255,.65);
+
+    font-size:14px;
+
+    line-height:1.7;
+
+    max-width:650px;
+
+    margin:auto;
+}
+
+
+/* =========================================================
+   REVEAL ANIMATION
+========================================================= */
+
+.reveal{
+    opacity:0;
+
+    transform:
+        translateY(40px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s cubic-bezier(.2,.8,.2,1);
+}
+
+.reveal.show{
+    opacity:1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   CARD STAGGER
+========================================================= */
+
+.reason-item:nth-child(1){
+    transition-delay:.05s;
+}
+
+.reason-item:nth-child(2){
+    transition-delay:.12s;
+}
+
+.reason-item:nth-child(3){
+    transition-delay:.19s;
+}
+
+.reason-item:nth-child(4){
+    transition-delay:.26s;
+}
+
+.reason-item:nth-child(5){
+    transition-delay:.33s;
+}
+
+.reason-item:nth-child(6){
+    transition-delay:.40s;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    position:relative;
+
+    z-index:4;
+
+    padding:
+        28px 6%;
+
+    text-align:center;
+
+    border-top:
+        1px solid rgba(5,18,29,.07);
+
+    color:#777;
+
+    font-size:12px;
+
+    background:
+        rgba(255,255,255,.35);
+}
+
+footer strong{
+    color:var(--navy);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media(max-width:1050px){
+
+    .hero{
+        padding-left:4%;
+        padding-right:4%;
+    }
+
+    .why-section{
+        padding-left:4%;
+        padding-right:4%;
+    }
+
+    .why-grid{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+
+        gap:24px;
+    }
+
+    .reason-card{
+        min-height:380px;
+    }
+
+    .reason-visual{
+        height:170px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:700px){
+
+    .hero{
+        padding:
+            55px
+            5%
+            35px;
+    }
+
+    .hero h1{
+        font-size:
+            clamp(43px,13vw,65px);
+
+        letter-spacing:-3px;
+    }
+
+    .hero p{
+        font-size:14px;
+        line-height:1.75;
+    }
+
+    .why-section{
+        padding:
+            10px
+            5%
+            75px;
+    }
+
+    .why-grid{
+        grid-template-columns:1fr;
+
+        gap:20px;
+    }
+
+    .reason-card{
+        min-height:420px;
+
+        border-radius:24px;
+    }
+
+    .reason-visual{
+        height:190px;
+    }
+
+    .reason-content{
+        min-height:230px;
+
+        padding:
+            22px
+            22px
+            24px;
+    }
+
+    .reason-content h3{
+        font-size:23px;
+    }
+
+    .bottom-message{
+        margin:
+            0 5%
+            70px;
+
+        padding:
+            32px 24px;
+
+        border-radius:23px;
+    }
+
+    .bottom-message h2{
+        font-size:28px;
+    }
+
+    .bg-shape.two{
+        right:-45px;
+    }
+
+    .bg-shape.three{
+        left:-20px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media(max-width:430px){
+
+    .hero{
+        padding-top:45px;
+    }
+
+    .eyebrow{
+        font-size:9px;
+
+        padding:
+            8px 13px;
+
+        letter-spacing:1.3px;
+    }
+
+    .hero h1{
+        font-size:42px;
+
+        letter-spacing:-2.5px;
+    }
+
+    .hero p{
+        font-size:13px;
+    }
+
+    .reason-card{
+        min-height:400px;
+    }
+
+    .reason-visual{
+        height:175px;
+    }
+
+    .reason-content{
+        min-height:225px;
+    }
+
+    .icon-cube{
+        width:72px;
+        height:72px;
+    }
+
+    .icon-ring{
+        width:90px;
+        height:90px;
+
+        border-width:14px;
+    }
+
+    .icon-sphere{
+        width:80px;
+        height:80px;
+    }
+
+    .icon-diamond{
+        width:72px;
+        height:72px;
+    }
+
+    .icon-target{
+        width:88px;
+        height:88px;
+    }
+
+    .icon-target::before{
+        width:42px;
+        height:42px;
+    }
+
+    .icon-stack{
+        transform:
+            scale(.85)
+            translateZ(35px);
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:.01ms !important;
+        scroll-behavior:auto !important;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="page">
+
+    <!-- BACKGROUND -->
+    <div class="bg-glow one"></div>
+    <div class="bg-glow two"></div>
+
+    <div class="bg-shape one"></div>
+    <div class="bg-shape two"></div>
+    <div class="bg-shape three"></div>
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="hero reveal">
+
+        <div class="eyebrow">
+            Why Work With Me
+        </div>
+
+        <h1>
+            Why Choose Me<span>.</span>
+        </h1>
+
+        <p>
+            I combine creative thinking, motion design and
+            technical precision to create visual experiences
+            that feel premium, purposeful and memorable.
+        </p>
+
+    </section>
+
+
+    <!-- =====================================================
+         WHY CHOOSE ME
+    ====================================================== -->
+
+    <section class="why-section">
+
+        <div class="why-grid">
+
+
+            <!-- CARD 01 -->
+            <article class="reason-item reveal">
+
+                <div class="reason-card">
+
+                    <div class="reason-visual">
+
+                        <div class="reason-number">
+                            01
+                        </div>
+
+                        <div class="reason-label">
+                            Creativity
+                        </div>
+
+                        <div class="icon-cube"></div>
+
+                    </div>
+
+                    <div class="reason-content">
+
+                        <h3>
+                            Creative <span>Thinking.</span>
+                        </h3>
+
+                        <p>
+                            I turn ideas into distinctive visual
+                            experiences by combining creativity,
+                            strategy and modern motion design.
+                        </p>
+
+                        <div class="reason-footer">
+
+                            <div class="reason-line"></div>
+
+                            <div class="reason-arrow">
+                                ↗
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- CARD 02 -->
+            <article class="reason-item reveal">
+
+                <div class="reason-card">
+
+                    <div class="reason-visual">
+
+                        <div class="reason-number">
+                            02
+                        </div>
+
+                        <div class="reason-label">
+                            Quality
+                        </div>
+
+                        <div class="icon-ring"></div>
+
+                    </div>
+
+                    <div class="reason-content">
+
+                        <h3>
+                            Premium <span>Quality.</span>
+                        </h3>
+
+                        <p>
+                            Every detail matters. I focus on clean
+                            composition, polished animation and
+                            professional visual execution.
+                        </p>
+
+                        <div class="reason-footer">
+
+                            <div class="reason-line"></div>
+
+                            <div class="reason-arrow">
+                                ↗
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- CARD 03 -->
+            <article class="reason-item reveal">
+
+                <div class="reason-card">
+
+                    <div class="reason-visual">
+
+                        <div class="reason-number">
+                            03
+                        </div>
+
+                        <div class="reason-label">
+                            Precision
+                        </div>
+
+                        <div class="icon-sphere"></div>
+
+                    </div>
+
+                    <div class="reason-content">
+
+                        <h3>
+                            Detail <span>Focused.</span>
+                        </h3>
+
+                        <p>
+                            From timing and typography to spacing
+                            and movement, I pay attention to the
+                            small details that elevate the final result.
+                        </p>
+
+                        <div class="reason-footer">
+
+                            <div class="reason-line"></div>
+
+                            <div class="reason-arrow">
+                                ↗
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- CARD 04 -->
+            <article class="reason-item reveal">
+
+                <div class="reason-card">
+
+                    <div class="reason-visual">
+
+                        <div class="reason-number">
+                            04
+                        </div>
+
+                        <div class="reason-label">
+                            Innovation
+                        </div>
+
+                        <div class="icon-diamond"></div>
+
+                    </div>
+
+                    <div class="reason-content">
+
+                        <h3>
+                            Modern <span>Approach.</span>
+                        </h3>
+
+                        <p>
+                            I explore modern visual techniques,
+                            3D elements and motion systems to keep
+                            every project fresh and relevant.
+                        </p>
+
+                        <div class="reason-footer">
+
+                            <div class="reason-line"></div>
+
+                            <div class="reason-arrow">
+                                ↗
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- CARD 05 -->
+            <article class="reason-item reveal">
+
+                <div class="reason-card">
+
+                    <div class="reason-visual">
+
+                        <div class="reason-number">
+                            05
+                        </div>
+
+                        <div class="reason-label">
+                            Versatility
+                        </div>
+
+                        <div class="icon-stack">
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="reason-content">
+
+                        <h3>
+                            Versatile <span>Skills.</span>
+                        </h3>
+
+                        <p>
+                            From motion graphics and branding to
+                            social media content and 3D visuals,
+                            I can adapt my creative direction to different needs.
+                        </p>
+
+                        <div class="reason-footer">
+
+                            <div class="reason-line"></div>
+
+                            <div class="reason-arrow">
+                                ↗
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- CARD 06 -->
+            <article class="reason-item reveal">
+
+                <div class="reason-card">
+
+                    <div class="reason-visual">
+
+                        <div class="reason-number">
+                            06
+                        </div>
+
+                        <div class="reason-label">
+                            Results
+                        </div>
+
+                        <div class="icon-target"></div>
+
+                    </div>
+
+                    <div class="reason-content">
+
+                        <h3>
+                            Purpose <span>Driven.</span>
+                        </h3>
+
+                        <p>
+                            I don't create visuals just to look good.
+                            Every design is built to communicate,
+                            engage and strengthen the overall message.
+                        </p>
+
+                        <div class="reason-footer">
+
+                            <div class="reason-line"></div>
+
+                            <div class="reason-arrow">
+                                ↗
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         BOTTOM MESSAGE
+    ====================================================== -->
+
+    <section class="bottom-message reveal">
+
+        <h2>
+            Let's Create Something
+            <span>Exceptional.</span>
+        </h2>
+
+        <p>
+            A strong idea deserves a strong visual experience.
+            Let's turn your concept into motion that people remember.
+        </p>
+
+    </section>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <!-- <footer>
+        Crafted with precision by
+        <strong>Muwahad</strong>
+    </footer> -->
+
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   REVEAL ON SCROLL
+========================================================= */
+
+const revealElements =
+    document.querySelectorAll(".reveal");
+
+const revealObserver =
+    new IntersectionObserver(
+        (entries) => {
+
+            entries.forEach(entry => {
+
+                if(entry.isIntersecting){
+
+                    entry.target.classList.add("show");
+
+                    revealObserver.unobserve(
+                        entry.target
+                    );
+
+                }
+
+            });
+
+        },
+        {
+            threshold:.12
+        }
+    );
+
+
+revealElements.forEach(element => {
+
+    revealObserver.observe(element);
+
+});
+
+
+/* =========================================================
+   3D CARD MOUSE TILT
+========================================================= */
+
+const cards =
+    document.querySelectorAll(".reason-card");
+
+
+cards.forEach(card => {
+
+    card.addEventListener(
+        "mousemove",
+        event => {
+
+            if(window.innerWidth <= 700){
+                return;
+            }
+
+            const rect =
+                card.getBoundingClientRect();
+
+            const x =
+                event.clientX - rect.left;
+
+            const y =
+                event.clientY - rect.top;
+
+            const centerX =
+                rect.width / 2;
+
+            const centerY =
+                rect.height / 2;
+
+            const rotateY =
+                ((x - centerX) / centerX) * 5;
+
+            const rotateX =
+                ((centerY - y) / centerY) * 5;
+
+            card.style.transform = `
+                translateY(-8px)
+                rotateX(${rotateX}deg)
+                rotateY(${rotateY}deg)
+            `;
+
+        }
+    );
+
+
+    card.addEventListener(
+        "mouseleave",
+        () => {
+
+            card.style.transform = "";
+
+        }
+    );
+
+});
+
+
+/* =========================================================
+   3D BACKGROUND PARALLAX
+========================================================= */
+
+const shapes =
+    document.querySelectorAll(".bg-shape");
+
+
+window.addEventListener(
+    "mousemove",
+    event => {
+
+        if(window.innerWidth <= 700){
+            return;
+        }
+
+        const x =
+            (event.clientX / window.innerWidth - .5);
+
+        const y =
+            (event.clientY / window.innerHeight - .5);
+
+
+        shapes.forEach(
+            (shape,index) => {
+
+                const strength =
+                    (index + 1) * 8;
+
+                shape.style.marginLeft =
+                    `${x * strength}px`;
+
+                shape.style.marginTop =
+                    `${y * strength}px`;
+
+            }
+        );
+
+    }
+);
+
+
+/* =========================================================
+   FLOATING VISUAL MOVEMENT
+========================================================= */
+
+const visualObjects = [
+    ...document.querySelectorAll(
+        ".icon-cube, .icon-ring, .icon-sphere, .icon-diamond, .icon-stack, .icon-target"
+    )
+];
+
+
+visualObjects.forEach(object => {
+
+    let animation;
+
+    const originalTransform =
+        getComputedStyle(object).transform;
+
+
+    object.addEventListener(
+        "mouseenter",
+        () => {
+
+            if(window.innerWidth <= 700){
+                return;
+            }
+
+            let start = null;
+
+            const animate =
+                timestamp => {
+
+                    if(!start){
+                        start = timestamp;
+                    }
+
+                    const elapsed =
+                        timestamp - start;
+
+                    const movement =
+                        Math.sin(elapsed / 400) * 4;
+
+                    object.style.translate =
+                        `0 ${movement}px`;
+
+                    animation =
+                        requestAnimationFrame(
+                            animate
+                        );
+
+                };
+
+            animation =
+                requestAnimationFrame(
+                    animate
+                );
+
+        }
+    );
+
+
+    object.addEventListener(
+        "mouseleave",
+        () => {
+
+            cancelAnimationFrame(
+                animation
+            );
+
+            object.style.translate = "";
+
+        }
+    );
+
+});
+
+
+/* =========================================================
+   CARD TOUCH FEEDBACK
+========================================================= */
+
+cards.forEach(card => {
+
+    card.addEventListener(
+        "touchstart",
+        () => {
+
+            card.style.transform =
+                "translateY(-5px)";
+
+        },
+        {
+            passive:true
+        }
+    );
+
+
+    card.addEventListener(
+        "touchend",
+        () => {
+
+            setTimeout(() => {
+
+                card.style.transform = "";
+
+            },180);
+
+        },
+        {
+            passive:true
+        }
+    );
+
+});
+
+
+/* =========================================================
+   RESIZE RESET
+========================================================= */
+
+window.addEventListener(
+    "resize",
+    () => {
+
+        if(window.innerWidth <= 700){
+
+            cards.forEach(card => {
+
+                card.style.transform = "";
+
+            });
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>

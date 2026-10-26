@@ -1,0 +1,1609 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Muwahad — Qualification</title>
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root{
+    --off-white:#FBF8F5;
+    --white:#FFFFFF;
+
+    --navy:#05121D;
+    --dark:#303132;
+
+    --gold:#C4914E;
+    --gold-light:#DEB680;
+
+    --gray:#D3CFCA;
+
+    --border:rgba(5,18,29,.10);
+
+    --shadow:
+        0 18px 50px rgba(5,18,29,.09);
+
+    --shadow-hover:
+        0 28px 70px rgba(5,18,29,.14);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:
+        Inter,
+        Poppins,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background:var(--off-white);
+    color:var(--navy);
+
+    overflow-x:hidden;
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.qualification-section{
+    position:relative;
+
+    min-height:100vh;
+
+    padding:
+        90px 7%
+        110px;
+
+    overflow:hidden;
+
+    isolation:isolate;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.qualification-bg{
+    position:absolute;
+    inset:0;
+
+    z-index:-2;
+
+    pointer-events:none;
+
+    overflow:hidden;
+}
+
+
+/* Gold glow */
+
+.qualification-bg::before{
+    content:"";
+
+    position:absolute;
+
+    width:520px;
+    height:520px;
+
+    right:-220px;
+    top:30px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(196,145,78,.13),
+            transparent 68%
+        );
+
+    filter:blur(12px);
+}
+
+
+/* Dark soft glow */
+
+.qualification-bg::after{
+    content:"";
+
+    position:absolute;
+
+    width:430px;
+    height:430px;
+
+    left:-220px;
+    bottom:-180px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(5,18,29,.07),
+            transparent 70%
+        );
+
+    filter:blur(20px);
+}
+
+
+/* =========================================================
+   FLOATING SHAPES
+========================================================= */
+
+.bg-shape{
+    position:absolute;
+
+    border:1px solid rgba(196,145,78,.18);
+
+    pointer-events:none;
+
+    animation:
+        floatingShape 8s ease-in-out infinite;
+}
+
+.shape-one{
+    width:90px;
+    height:90px;
+
+    right:8%;
+    top:15%;
+
+    transform:
+        rotateX(55deg)
+        rotateY(35deg)
+        rotateZ(25deg);
+}
+
+.shape-two{
+    width:48px;
+    height:48px;
+
+    left:7%;
+    top:38%;
+
+    border-radius:50%;
+
+    animation-delay:2s;
+}
+
+.shape-three{
+    width:110px;
+    height:110px;
+
+    right:13%;
+    bottom:10%;
+
+    transform:
+        rotateX(50deg)
+        rotateY(35deg);
+
+    animation-delay:4s;
+}
+
+@keyframes floatingShape{
+
+    0%,
+    100%{
+        translate:0 0;
+    }
+
+    50%{
+        translate:0 -22px;
+    }
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.qualification-header{
+    max-width:850px;
+
+    margin:
+        0 auto
+        70px;
+
+    text-align:center;
+}
+
+
+/* Label */
+
+.qualification-label{
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:10px;
+
+    margin-bottom:18px;
+
+    color:var(--gold);
+
+    font-size:13px;
+
+    font-weight:800;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+}
+
+.qualification-label::before,
+.qualification-label::after{
+    content:"";
+
+    width:28px;
+    height:1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--gold)
+        );
+}
+
+.qualification-label::after{
+    background:
+        linear-gradient(
+            90deg,
+            var(--gold),
+            transparent
+        );
+}
+
+
+/* Heading */
+
+.qualification-header h2{
+    font-size:
+        clamp(40px,5vw,68px);
+
+    line-height:1.05;
+
+    letter-spacing:-2.5px;
+
+    color:var(--navy);
+
+    margin-bottom:20px;
+}
+
+.qualification-header h2 span{
+    color:var(--gold);
+}
+
+
+/* Description */
+
+.qualification-header p{
+    max-width:690px;
+
+    margin:0 auto;
+
+    color:#62605D;
+
+    font-size:16px;
+
+    line-height:1.8;
+}
+
+
+/* =========================================================
+   MAIN WRAPPER
+========================================================= */
+
+.qualification-wrapper{
+    position:relative;
+
+    max-width:1180px;
+
+    margin:0 auto;
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:80px;
+}
+
+
+/* =========================================================
+   COLUMN
+========================================================= */
+
+.qualification-column{
+    position:relative;
+}
+
+
+/* Column title */
+
+.column-title{
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:35px;
+
+    color:var(--navy);
+
+    font-size:22px;
+
+    font-weight:800;
+}
+
+
+/* Title icon */
+
+.column-title-icon{
+    width:46px;
+    height:46px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:14px;
+
+    color:var(--gold);
+
+    background:
+        rgba(196,145,78,.09);
+
+    border:
+        1px solid
+        rgba(196,145,78,.24);
+
+    box-shadow:
+        0 10px 28px
+        rgba(196,145,78,.10);
+
+    font-size:19px;
+
+    transform:
+        perspective(500px)
+        rotateY(-8deg);
+}
+
+
+/* =========================================================
+   TIMELINE
+========================================================= */
+
+.timeline{
+    position:relative;
+
+    padding-left:34px;
+}
+
+
+/* Vertical line */
+
+.timeline::before{
+    content:"";
+
+    position:absolute;
+
+    left:7px;
+
+    top:8px;
+    bottom:8px;
+
+    width:1px;
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--gold),
+            rgba(196,145,78,.12)
+        );
+}
+
+
+/* =========================================================
+   TIMELINE ITEM
+========================================================= */
+
+.timeline-item{
+    position:relative;
+
+    margin-bottom:28px;
+
+    perspective:1000px;
+}
+
+.timeline-item:last-child{
+    margin-bottom:0;
+}
+
+
+/* Dot */
+
+.timeline-dot{
+    position:absolute;
+
+    left:-34px;
+    top:25px;
+
+    width:15px;
+    height:15px;
+
+    border-radius:50%;
+
+    background:
+        var(--gold);
+
+    border:
+        4px solid
+        var(--off-white);
+
+    box-shadow:
+        0 0 0 1px
+        rgba(196,145,78,.35),
+
+        0 0 20px
+        rgba(196,145,78,.25);
+
+    z-index:3;
+}
+
+
+/* =========================================================
+   WHITE QUALIFICATION CARD
+========================================================= */
+
+.qualification-card{
+    position:relative;
+
+    min-height:180px;
+
+    padding:
+        27px 28px
+        29px;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    color:var(--navy);
+
+    background:
+        linear-gradient(
+            145deg,
+            #FFFFFF,
+            #FDFBF8
+        );
+
+    border:
+        1px solid
+        rgba(5,18,29,.09);
+
+    box-shadow:
+        var(--shadow);
+
+    transform-style:preserve-3d;
+
+    transition:
+        transform .45s
+        cubic-bezier(.2,.8,.2,1),
+
+        box-shadow .45s ease,
+
+        border-color .45s ease;
+}
+
+
+/* Soft gold glow */
+
+.qualification-card::before{
+    content:"";
+
+    position:absolute;
+
+    width:170px;
+    height:170px;
+
+    right:-75px;
+    top:-80px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(196,145,78,.13),
+            transparent 68%
+        );
+
+    pointer-events:none;
+}
+
+
+/* Shine */
+
+.qualification-card::after{
+    content:"";
+
+    position:absolute;
+
+    top:-120%;
+
+    left:-70%;
+
+    width:45%;
+    height:300%;
+
+    transform:rotate(25deg);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.80),
+            transparent
+        );
+
+    transition:
+        left .8s ease;
+
+    pointer-events:none;
+}
+
+
+/* Hover */
+
+.qualification-card:hover{
+    transform:
+        translateY(-8px)
+        rotateX(2deg)
+        rotateY(-2deg);
+
+    box-shadow:
+        var(--shadow-hover);
+
+    border-color:
+        rgba(196,145,78,.30);
+}
+
+.qualification-card:hover::after{
+    left:125%;
+}
+
+
+/* =========================================================
+   CARD TOP
+========================================================= */
+
+.card-top{
+    position:relative;
+
+    display:flex;
+
+    align-items:flex-start;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    margin-bottom:17px;
+
+    z-index:2;
+}
+
+
+/* Date */
+
+.card-date{
+    display:inline-flex;
+
+    align-items:center;
+
+    padding:
+        7px 12px;
+
+    border-radius:30px;
+
+    color:
+        #9A6D35;
+
+    background:
+        rgba(196,145,78,.09);
+
+    border:
+        1px solid
+        rgba(196,145,78,.20);
+
+    font-size:10px;
+
+    font-weight:800;
+
+    letter-spacing:1.1px;
+
+    white-space:nowrap;
+}
+
+
+/* Card icon */
+
+.card-icon{
+    width:42px;
+    height:42px;
+
+    flex-shrink:0;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:13px;
+
+    color:var(--gold);
+
+    background:
+        rgba(196,145,78,.08);
+
+    border:
+        1px solid
+        rgba(196,145,78,.18);
+
+    font-size:18px;
+
+    transition:
+        transform .4s ease,
+
+        background .4s ease,
+
+        box-shadow .4s ease;
+}
+
+.qualification-card:hover .card-icon{
+    transform:
+        translateY(-4px)
+        rotate(8deg);
+
+    background:
+        rgba(196,145,78,.13);
+
+    box-shadow:
+        0 8px 20px
+        rgba(196,145,78,.12);
+}
+
+
+/* =========================================================
+   CARD TEXT
+========================================================= */
+
+.qualification-card h3{
+    position:relative;
+
+    z-index:2;
+
+    color:var(--navy);
+
+    font-size:21px;
+
+    line-height:1.25;
+
+    margin-bottom:7px;
+}
+
+
+.qualification-card h4{
+    position:relative;
+
+    z-index:2;
+
+    color:
+        #A07138;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    margin-bottom:12px;
+}
+
+
+.qualification-card p{
+    position:relative;
+
+    z-index:2;
+
+    max-width:560px;
+
+    color:#686766;
+
+    font-size:13px;
+
+    line-height:1.7;
+}
+
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+.reveal{
+    opacity:0;
+
+    transform:
+        translateY(35px);
+
+    animation:
+        revealUp .8s
+        cubic-bezier(.2,.8,.2,1)
+        forwards;
+}
+
+.delay-1{
+    animation-delay:.12s;
+}
+
+.delay-2{
+    animation-delay:.24s;
+}
+
+.delay-3{
+    animation-delay:.36s;
+}
+
+@keyframes revealUp{
+
+    to{
+        opacity:1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width:1000px){
+
+    .qualification-section{
+        padding:
+            75px 5%
+            90px;
+    }
+
+    .qualification-wrapper{
+        gap:45px;
+    }
+
+    .qualification-header{
+        margin-bottom:55px;
+    }
+
+    .qualification-header h2{
+        font-size:52px;
+    }
+
+    .qualification-card{
+        padding:24px;
+
+        min-height:175px;
+    }
+
+    .qualification-card h3{
+        font-size:19px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width:760px){
+
+    .qualification-section{
+        padding:
+            65px 6%
+            75px;
+    }
+
+    .qualification-header{
+        margin-bottom:45px;
+    }
+
+    .qualification-label{
+        font-size:11px;
+
+        letter-spacing:2px;
+    }
+
+    .qualification-label::before,
+    .qualification-label::after{
+        width:18px;
+    }
+
+    .qualification-header h2{
+        font-size:
+            clamp(36px,10vw,48px);
+
+        letter-spacing:-1.7px;
+
+        margin-bottom:15px;
+    }
+
+    .qualification-header p{
+        font-size:14px;
+
+        line-height:1.7;
+    }
+
+
+    /* One column */
+
+    .qualification-wrapper{
+        grid-template-columns:1fr;
+
+        gap:50px;
+    }
+
+
+    .column-title{
+        font-size:20px;
+
+        margin-bottom:28px;
+    }
+
+    .column-title-icon{
+        width:42px;
+        height:42px;
+
+        border-radius:12px;
+    }
+
+
+    /* Timeline */
+
+    .timeline{
+        padding-left:27px;
+    }
+
+    .timeline::before{
+        left:6px;
+    }
+
+
+    .timeline-dot{
+        left:-27px;
+
+        width:14px;
+        height:14px;
+    }
+
+
+    .timeline-item{
+        margin-bottom:22px;
+    }
+
+
+    /* Card */
+
+    .qualification-card{
+        padding:
+            22px;
+
+        min-height:0;
+
+        border-radius:19px;
+    }
+
+
+    .card-top{
+        gap:12px;
+
+        margin-bottom:14px;
+    }
+
+
+    .card-date{
+        font-size:9px;
+
+        padding:
+            6px 9px;
+    }
+
+
+    .card-icon{
+        width:38px;
+        height:38px;
+
+        border-radius:11px;
+
+        font-size:16px;
+    }
+
+
+    .qualification-card h3{
+        font-size:18px;
+    }
+
+    .qualification-card h4{
+        font-size:12px;
+    }
+
+    .qualification-card p{
+        font-size:12px;
+
+        line-height:1.65;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width:430px){
+
+    .qualification-section{
+        padding:
+            55px 5%
+            65px;
+    }
+
+    .qualification-header h2{
+        font-size:35px;
+    }
+
+    .qualification-header p{
+        font-size:13px;
+    }
+
+
+    .qualification-wrapper{
+        gap:43px;
+    }
+
+
+    .column-title{
+        font-size:18px;
+
+        gap:11px;
+    }
+
+    .column-title-icon{
+        width:38px;
+        height:38px;
+
+        font-size:16px;
+    }
+
+
+    .timeline{
+        padding-left:23px;
+    }
+
+    .timeline-dot{
+        left:-23px;
+
+        width:12px;
+        height:12px;
+
+        border-width:3px;
+    }
+
+
+    .qualification-card{
+        padding:19px;
+
+        border-radius:17px;
+    }
+
+
+    .qualification-card h3{
+        font-size:17px;
+    }
+
+    .qualification-card p{
+        font-size:11.5px;
+    }
+
+
+    .card-icon{
+        width:34px;
+        height:34px;
+
+        font-size:14px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+        animation-duration:.01ms !important;
+
+        animation-iteration-count:1 !important;
+
+        transition-duration:.01ms !important;
+
+        scroll-behavior:auto !important;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =======================================================
+     QUALIFICATION SECTION
+======================================================= -->
+
+<section
+    class="qualification-section"
+    id="qualification"
+>
+
+
+    <!-- ===================================================
+         BACKGROUND
+    ==================================================== -->
+
+    <div class="qualification-bg">
+
+        <span class="bg-shape shape-one"></span>
+
+        <span class="bg-shape shape-two"></span>
+
+        <span class="bg-shape shape-three"></span>
+
+    </div>
+
+
+
+    <!-- ===================================================
+         HEADER
+    ==================================================== -->
+
+    <div class="qualification-header reveal">
+
+        <div class="qualification-label">
+            Qualification
+        </div>
+
+        <h2>
+            My <span>Educational</span> Journey
+        </h2>
+
+        <p>
+            A journey of continuous learning, personal growth
+            and developing the knowledge that supports my
+            creative and professional career.
+        </p>
+
+    </div>
+
+
+
+    <!-- ===================================================
+         MAIN
+    ==================================================== -->
+
+    <div class="qualification-wrapper">
+
+
+        <!-- =================================================
+             EDUCATION
+        ================================================== -->
+
+        <div class="qualification-column">
+
+            <div class="column-title reveal">
+
+                <div class="column-title-icon">
+                    🎓
+                </div>
+
+                Education
+
+            </div>
+
+
+            <div class="timeline">
+
+
+                <!-- =========================================
+                     MATRIC
+                ========================================== -->
+
+                <div
+                    class="timeline-item reveal delay-1"
+                >
+
+                    <span class="timeline-dot"></span>
+
+                    <article
+                        class="qualification-card"
+                    >
+
+                        <div class="card-top">
+
+                            <span class="card-date">
+                                MATRIC
+                            </span>
+
+                            <div class="card-icon">
+                                📚
+                            </div>
+
+                        </div>
+
+                        <h3>
+                            Matriculation
+                        </h3>
+
+                        <h4>
+                            Secondary School Education
+                        </h4>
+
+                        <p>
+                            Completed secondary school education
+                            and developed a strong foundation in
+                            academic learning, creativity and
+                            personal development.
+                        </p>
+
+                    </article>
+
+                </div>
+
+
+
+                <!-- =========================================
+                     INTERMEDIATE
+                ========================================== -->
+
+                <div
+                    class="timeline-item reveal delay-2"
+                >
+
+                    <span class="timeline-dot"></span>
+
+                    <article
+                        class="qualification-card"
+                    >
+
+                        <div class="card-top">
+
+                            <span class="card-date">
+                                INTERMEDIATE
+                            </span>
+
+                            <div class="card-icon">
+                                🎓
+                            </div>
+
+                        </div>
+
+                        <h3>
+                            Intermediate
+                        </h3>
+
+                        <h4>
+                            Higher Secondary Education
+                        </h4>
+
+                        <p>
+                            Completed intermediate education while
+                            developing analytical thinking, creative
+                            skills and a deeper interest in technology
+                            and digital media.
+                        </p>
+
+                    </article>
+
+                </div>
+
+
+
+                <!-- =========================================
+                     BACHELOR
+                ========================================== -->
+
+                <div
+                    class="timeline-item reveal delay-3"
+                >
+
+                    <span class="timeline-dot"></span>
+
+                    <article
+                        class="qualification-card"
+                    >
+
+                        <div class="card-top">
+
+                            <span class="card-date">
+                                BACHELOR'S
+                            </span>
+
+                            <div class="card-icon">
+                                ◈
+                            </div>
+
+                        </div>
+
+                        <h3>
+                            Bachelor's Degree
+                        </h3>
+
+                        <h4>
+                            Higher Education
+                        </h4>
+
+                        <p>
+                            Continuing higher education while
+                            expanding professional knowledge,
+                            creative abilities and expertise in
+                            modern digital design.
+                        </p>
+
+                    </article>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             PROFESSIONAL EXPERTISE
+        ================================================== -->
+
+        <div class="qualification-column">
+
+            <div class="column-title reveal">
+
+                <div class="column-title-icon">
+                    ✦
+                </div>
+
+                Expertise
+
+            </div>
+
+
+            <div class="timeline">
+
+
+                <!-- =========================================
+                     GRAPHIC MOTION
+                ========================================== -->
+
+                <div
+                    class="timeline-item reveal delay-1"
+                >
+
+                    <span class="timeline-dot"></span>
+
+                    <article
+                        class="qualification-card"
+                    >
+
+                        <div class="card-top">
+
+                            <span class="card-date">
+                                2022 — PRESENT
+                            </span>
+
+                            <div class="card-icon">
+                                ✦
+                            </div>
+
+                        </div>
+
+                        <h3>
+                            Graphic Motion Specialist
+                        </h3>
+
+                        <h4>
+                            Creative & Motion Design
+                        </h4>
+
+                        <p>
+                            Creating engaging motion graphics,
+                            animated branding, social media content
+                            and visually powerful digital experiences.
+                        </p>
+
+                    </article>
+
+                </div>
+
+
+
+                <!-- =========================================
+                     VISUAL STORYTELLING
+                ========================================== -->
+
+                <div
+                    class="timeline-item reveal delay-2"
+                >
+
+                    <span class="timeline-dot"></span>
+
+                    <article
+                        class="qualification-card"
+                    >
+
+                        <div class="card-top">
+
+                            <span class="card-date">
+                                PROFESSIONAL
+                            </span>
+
+                            <div class="card-icon">
+                                ◎
+                            </div>
+
+                        </div>
+
+                        <h3>
+                            Visual Storytelling
+                        </h3>
+
+                        <h4>
+                            Creative Direction
+                        </h4>
+
+                        <p>
+                            Transforming concepts into memorable
+                            visual stories through motion, typography,
+                            composition and creative direction.
+                        </p>
+
+                    </article>
+
+                </div>
+
+
+
+                <!-- =========================================
+                     3D MOTION
+                ========================================== -->
+
+                <div
+                    class="timeline-item reveal delay-3"
+                >
+
+                    <span class="timeline-dot"></span>
+
+                    <article
+                        class="qualification-card"
+                    >
+
+                        <div class="card-top">
+
+                            <span class="card-date">
+                                CURRENT FOCUS
+                            </span>
+
+                            <div class="card-icon">
+                                ⬡
+                            </div>
+
+                        </div>
+
+                        <h3>
+                            3D & Creative Motion
+                        </h3>
+
+                        <h4>
+                            Modern Digital Experiences
+                        </h4>
+
+                        <p>
+                            Exploring immersive 3D visuals,
+                            interactive motion and premium digital
+                            experiences that give brands a distinctive
+                            visual identity.
+                        </p>
+
+                    </article>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<script>
+
+/* =========================================================
+   3D MOUSE TILT
+========================================================= */
+
+const cards =
+    document.querySelectorAll(
+        ".qualification-card"
+    );
+
+
+if(
+    window.matchMedia(
+        "(pointer:fine)"
+    ).matches
+){
+
+    cards.forEach(card => {
+
+        card.addEventListener(
+            "mousemove",
+            event => {
+
+                const rect =
+                    card.getBoundingClientRect();
+
+                const x =
+                    event.clientX -
+                    rect.left;
+
+                const y =
+                    event.clientY -
+                    rect.top;
+
+
+                const centerX =
+                    rect.width / 2;
+
+                const centerY =
+                    rect.height / 2;
+
+
+                const rotateY =
+                    (
+                        (x - centerX) /
+                        centerX
+                    ) * 3;
+
+                const rotateX =
+                    (
+                        (centerY - y) /
+                        centerY
+                    ) * 3;
+
+
+                card.style.transform =
+                    `perspective(1000px)
+                     translateY(-8px)
+                     rotateX(${rotateX}deg)
+                     rotateY(${rotateY}deg)`;
+
+            }
+        );
+
+
+        card.addEventListener(
+            "mouseleave",
+            () => {
+
+                card.style.transform =
+                    "";
+
+            }
+        );
+
+    });
+
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const revealElements =
+    document.querySelectorAll(
+        ".reveal"
+    );
+
+
+const observer =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(
+                entry => {
+
+                    if(
+                        entry.isIntersecting
+                    ){
+
+                        entry.target.style
+                            .animationPlayState =
+                            "running";
+
+                        observer.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                }
+            );
+
+        },
+        {
+            threshold:.12
+        }
+    );
+
+
+revealElements.forEach(
+    element => {
+
+        element.style
+            .animationPlayState =
+            "paused";
+
+        observer.observe(
+            element
+        );
+
+    }
+);
+
+</script>
+
+</body>
+</html>
+

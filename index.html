@@ -1,0 +1,1020 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#FBF8F5" />
+
+    <title>Muwahad — Portfolio</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #fbf8f5;
+            overflow-x: hidden;
+        }
+
+        /* =====================================================
+           PAGE FRAMES
+        ===================================================== */
+
+        .page-frame {
+            display: block;
+            width: 100%;
+            min-height: 100px;
+            height: 100vh;
+
+            border: 0;
+            margin: 0;
+            padding: 0;
+
+            overflow: hidden;
+            vertical-align: top;
+        }
+
+        /* =====================================================
+           BACK TO TOP
+        ===================================================== */
+
+        .back-to-top {
+            position: fixed;
+
+            right: 24px;
+            bottom: 24px;
+
+            z-index: 999999;
+
+            width: 46px;
+            height: 46px;
+
+            border: 1px solid rgba(196, 145, 78, 0.55);
+            border-radius: 50%;
+
+            background: #05121d;
+            color: #deb680;
+
+            font-size: 23px;
+            line-height: 1;
+
+            cursor: pointer;
+
+            opacity: 0;
+            visibility: hidden;
+
+            transform: translateY(12px);
+
+            transition:
+                opacity 0.25s ease,
+                transform 0.25s ease,
+                visibility 0.25s ease;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            background: #0a2231;
+            transform: translateY(-3px);
+        }
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 600px) {
+            .back-to-top {
+                right: 16px;
+                bottom: 16px;
+
+                width: 42px;
+                height: 42px;
+
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         HOME
+         Header + Hero
+    ===================================================== -->
+
+    <iframe
+        id="homeFrame"
+        class="page-frame"
+        src="home.html"
+        title="Home"
+        scrolling="no">
+    </iframe>
+
+
+    <!-- =====================================================
+         ABOUT
+    ===================================================== -->
+
+    <iframe
+        id="aboutFrame"
+        class="page-frame"
+        src="about.html"
+        title="About"
+        scrolling="no">
+    </iframe>
+
+
+    <!-- =====================================================
+         SERVICES
+    ===================================================== -->
+
+    <iframe
+        id="servicesFrame"
+        class="page-frame"
+        src="service.html"
+        title="Services"
+        scrolling="no">
+    </iframe>
+
+
+    <!-- =====================================================
+         QUALIFICATION / JOURNEY
+    ===================================================== -->
+
+    <iframe
+        id="journeyFrame"
+        class="page-frame"
+        src="study.html"
+        title="Journey and Qualification"
+        scrolling="no">
+    </iframe>
+
+
+    <!-- =====================================================
+         PROJECTS
+    ===================================================== -->
+
+    <iframe
+        id="projectsFrame"
+        class="page-frame"
+        src="project.html"
+        title="Projects"
+        scrolling="no">
+    </iframe>
+
+
+    <!-- =====================================================
+         WHY CHOOSE ME
+    ===================================================== -->
+
+    <iframe
+        id="chooseFrame"
+        class="page-frame"
+        src="choose.html"
+        title="Why Choose Me"
+        scrolling="no">
+    </iframe>
+
+
+    <!-- =====================================================
+         CONTACT
+    ===================================================== -->
+
+    <iframe
+        id="contactFrame"
+        class="page-frame"
+        src="contact.html"
+        title="Contact"
+        scrolling="no">
+    </iframe>
+
+
+    <!-- =====================================================
+         BACK TO TOP
+    ===================================================== -->
+
+    <button
+        class="back-to-top"
+        id="backToTop"
+        type="button"
+        aria-label="Scroll back to top"
+        title="Back to top">
+
+        ↑
+
+    </button>
+
+
+    <script>
+
+        /* =====================================================
+           FRAME REFERENCES
+        ===================================================== */
+
+        const homeFrame =
+            document.getElementById("homeFrame");
+
+        const aboutFrame =
+            document.getElementById("aboutFrame");
+
+        const servicesFrame =
+            document.getElementById("servicesFrame");
+
+        const journeyFrame =
+            document.getElementById("journeyFrame");
+
+        const projectsFrame =
+            document.getElementById("projectsFrame");
+
+        const chooseFrame =
+            document.getElementById("chooseFrame");
+
+        const contactFrame =
+            document.getElementById("contactFrame");
+
+
+        /* =====================================================
+           TARGET MAP
+           
+           All possible names are supported.
+        ===================================================== */
+
+        const targets = {
+
+            /* HOME */
+
+            home: homeFrame,
+            index: homeFrame,
+            hero: homeFrame,
+            top: homeFrame,
+
+
+            /* ABOUT */
+
+            about: aboutFrame,
+            "about-me": aboutFrame,
+            aboutme: aboutFrame,
+
+
+            /* SERVICES */
+
+            service: servicesFrame,
+            services: servicesFrame,
+
+
+            /* JOURNEY / QUALIFICATION */
+
+            journey: journeyFrame,
+            "my-journey": journeyFrame,
+            myjourney: journeyFrame,
+
+            qualification: journeyFrame,
+            qualifications: journeyFrame,
+
+            study: journeyFrame,
+            education: journeyFrame,
+
+
+            /* PROJECTS */
+
+            project: projectsFrame,
+            projects: projectsFrame,
+
+
+            /* WHY CHOOSE ME */
+
+            choose: chooseFrame,
+            "why-choose": chooseFrame,
+            whychoose: chooseFrame,
+
+            "why-choose-me": chooseFrame,
+            whychooseme: chooseFrame,
+
+
+            /* CONTACT */
+
+            contact: contactFrame
+
+        };
+
+
+        /* =====================================================
+           NORMALIZE HASH
+        ===================================================== */
+
+        function normalizeHash(value) {
+
+            if (!value) {
+                return "";
+            }
+
+            return value
+                .replace(/^#/, "")
+                .trim()
+                .toLowerCase()
+                .replace(/\s+/g, "-");
+
+        }
+
+
+        /* =====================================================
+           GET TARGET FRAME
+        ===================================================== */
+
+        function getTargetFrame(hash) {
+
+            const target =
+                normalizeHash(hash);
+
+            if (!target) {
+                return null;
+            }
+
+            return targets[target] || null;
+
+        }
+
+
+        /* =====================================================
+           SCROLL TO FRAME
+        ===================================================== */
+
+        function scrollToFrame(frame, smooth = true) {
+
+            if (!frame) {
+                return;
+            }
+
+
+            const frameTop =
+                frame.getBoundingClientRect().top +
+                window.scrollY;
+
+
+            window.scrollTo({
+
+                top: Math.max(0, frameTop),
+
+                behavior:
+                    smooth ? "smooth" : "auto"
+
+            });
+
+        }
+
+
+        /* =====================================================
+           HANDLE MENU LINK
+           
+           This function runs inside HOME iframe.
+        ===================================================== */
+
+        function handleMenuLink(event) {
+
+            const link =
+                event.target.closest("a");
+
+
+            if (!link) {
+                return;
+            }
+
+
+            const href =
+                link.getAttribute("href");
+
+
+            if (!href) {
+                return;
+            }
+
+
+            /*
+             * Only process hash links.
+             */
+
+            if (!href.startsWith("#")) {
+                return;
+            }
+
+
+            const frame =
+                getTargetFrame(href);
+
+
+            /*
+             * If it is not one of our portfolio
+             * section links, leave it alone.
+             */
+
+            if (!frame) {
+                return;
+            }
+
+
+            /*
+             * IMPORTANT:
+             * Stop the iframe from trying to
+             * scroll inside itself.
+             */
+
+            event.preventDefault();
+            event.stopPropagation();
+
+
+            /*
+             * Scroll the MAIN index.html.
+             */
+
+            scrollToFrame(frame, true);
+
+
+            /*
+             * Update URL.
+             */
+
+            const cleanHash =
+                normalizeHash(href);
+
+
+            history.pushState(
+                null,
+                "",
+                "#" + cleanHash
+            );
+
+        }
+
+
+        /* =====================================================
+           CONNECT HOME HEADER MENU
+        ===================================================== */
+
+        function connectHomeMenu() {
+
+            try {
+
+                const doc =
+                    homeFrame.contentDocument ||
+                    homeFrame.contentWindow.document;
+
+
+                if (!doc) {
+                    return;
+                }
+
+
+                /*
+                 * Prevent duplicate listeners.
+                 */
+
+                if (
+                    doc.documentElement.dataset
+                        .indexMenuConnected === "true"
+                ) {
+                    return;
+                }
+
+
+                doc.documentElement.dataset
+                    .indexMenuConnected = "true";
+
+
+                /*
+                 * Capture mode is intentional.
+                 *
+                 * It allows index.html to control
+                 * the navigation before the original
+                 * home.html navigation runs.
+                 */
+
+                doc.addEventListener(
+                    "click",
+                    handleMenuLink,
+                    true
+                );
+
+
+            } catch (error) {
+
+                console.error(
+                    "Home menu connection failed:",
+                    error
+                );
+
+            }
+
+        }
+
+
+        /* =====================================================
+           CALCULATE IFRAME HEIGHT
+        ===================================================== */
+
+        function updateFrameHeight(frame) {
+
+            if (!frame) {
+                return;
+            }
+
+
+            try {
+
+                const doc =
+                    frame.contentDocument ||
+                    frame.contentWindow.document;
+
+
+                if (!doc) {
+                    return;
+                }
+
+
+                const html =
+                    doc.documentElement;
+
+                const body =
+                    doc.body;
+
+
+                if (!html) {
+                    return;
+                }
+
+
+                const height =
+                    Math.max(
+
+                        html.scrollHeight,
+
+                        html.offsetHeight,
+
+                        html.clientHeight,
+
+                        body
+                            ? body.scrollHeight
+                            : 0,
+
+                        body
+                            ? body.offsetHeight
+                            : 0,
+
+                        body
+                            ? body.clientHeight
+                            : 0
+
+                    );
+
+
+                /*
+                 * Add a tiny safety margin so
+                 * the bottom of animated sections
+                 * doesn't get clipped.
+                 */
+
+                frame.style.height =
+                    Math.max(height, 100) + "px";
+
+
+                frame.style.minHeight =
+                    Math.max(height, 100) + "px";
+
+
+            } catch (error) {
+
+                console.warn(
+                    "Frame height error:",
+                    error
+                );
+
+            }
+
+        }
+
+
+        /* =====================================================
+           UPDATE ALL FRAME HEIGHTS
+        ===================================================== */
+
+        function updateAllFrames() {
+
+            updateFrameHeight(homeFrame);
+
+            updateFrameHeight(aboutFrame);
+
+            updateFrameHeight(servicesFrame);
+
+            updateFrameHeight(journeyFrame);
+
+            updateFrameHeight(projectsFrame);
+
+            updateFrameHeight(chooseFrame);
+
+            updateFrameHeight(contactFrame);
+
+        }
+
+
+        /* =====================================================
+           MONITOR FRAME
+        ===================================================== */
+
+        function monitorFrame(frame) {
+
+            if (!frame) {
+                return;
+            }
+
+
+            /*
+             * Some sections contain images,
+             * fonts, animations or 3D elements.
+             *
+             * Therefore height is checked several times.
+             */
+
+            const delays = [
+                50,
+                150,
+                300,
+                600,
+                1000,
+                1500,
+                2500
+            ];
+
+
+            delays.forEach(function(delay) {
+
+                setTimeout(function() {
+
+                    updateFrameHeight(frame);
+
+                }, delay);
+
+            });
+
+
+            /*
+             * Home contains the header.
+             */
+
+            if (frame === homeFrame) {
+
+                setTimeout(
+                    connectHomeMenu,
+                    100
+                );
+
+            }
+
+        }
+
+
+        /* =====================================================
+           FRAME LOAD
+        ===================================================== */
+
+        const allFrames = [
+
+            homeFrame,
+            aboutFrame,
+            servicesFrame,
+            journeyFrame,
+            projectsFrame,
+            chooseFrame,
+            contactFrame
+
+        ];
+
+
+        allFrames.forEach(function(frame) {
+
+            frame.addEventListener(
+                "load",
+                function() {
+
+                    updateFrameHeight(frame);
+
+                    monitorFrame(frame);
+
+                }
+            );
+
+        });
+
+
+        /* =====================================================
+           RESIZE
+        ===================================================== */
+
+        let resizeTimer = null;
+
+
+        window.addEventListener(
+            "resize",
+            function() {
+
+                clearTimeout(resizeTimer);
+
+
+                resizeTimer =
+                    setTimeout(
+                        function() {
+
+                            updateAllFrames();
+
+                        },
+                        150
+                    );
+
+            }
+        );
+
+
+        /* =====================================================
+           BACK TO TOP
+        ===================================================== */
+
+        const backToTop =
+            document.getElementById("backToTop");
+
+
+        window.addEventListener(
+            "scroll",
+            function() {
+
+                if (window.scrollY > 500) {
+
+                    backToTop.classList.add(
+                        "visible"
+                    );
+
+                } else {
+
+                    backToTop.classList.remove(
+                        "visible"
+                    );
+
+                }
+
+            }
+        );
+
+
+        backToTop.addEventListener(
+            "click",
+            function() {
+
+                window.scrollTo({
+
+                    top: 0,
+
+                    behavior: "smooth"
+
+                });
+
+
+                /*
+                 * Remove hash.
+                 */
+
+                history.pushState(
+                    null,
+                    "",
+                    window.location.pathname +
+                    window.location.search
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           DIRECT URL HASH
+           
+           Example:
+           
+           index.html#about
+           index.html#journey
+           index.html#projects
+        ===================================================== */
+
+        function handleCurrentHash() {
+
+            const hash =
+                window.location.hash;
+
+
+            if (!hash) {
+                return;
+            }
+
+
+            const frame =
+                getTargetFrame(hash);
+
+
+            if (!frame) {
+                return;
+            }
+
+
+            /*
+             * Wait for iframe heights.
+             */
+
+            setTimeout(
+                function() {
+
+                    scrollToFrame(
+                        frame,
+                        false
+                    );
+
+                },
+                700
+            );
+
+        }
+
+
+        /* =====================================================
+           BROWSER BACK / FORWARD
+        ===================================================== */
+
+        window.addEventListener(
+            "popstate",
+            function() {
+
+                const hash =
+                    window.location.hash;
+
+
+                if (!hash) {
+
+                    window.scrollTo({
+
+                        top: 0,
+
+                        behavior: "smooth"
+
+                    });
+
+                    return;
+
+                }
+
+
+                const frame =
+                    getTargetFrame(hash);
+
+
+                if (frame) {
+
+                    scrollToFrame(
+                        frame,
+                        true
+                    );
+
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           INITIAL PAGE LOAD
+        ===================================================== */
+
+        window.addEventListener(
+            "load",
+            function() {
+
+                /*
+                 * Initial measurements.
+                 */
+
+                updateAllFrames();
+
+
+                /*
+                 * Connect Home menu.
+                 */
+
+                setTimeout(
+                    connectHomeMenu,
+                    300
+                );
+
+
+                /*
+                 * Handle direct hash.
+                 */
+
+                handleCurrentHash();
+
+            }
+        );
+	 
+/* =====================================================
+   RECEIVE NAVIGATION FROM HOME.HTML
+===================================================== */
+
+window.addEventListener("message", function(event) {
+
+    if (!event.data) return;
+
+    if (event.data.type !== "portfolio-navigation") {
+        return;
+    }
+
+    let target = String(
+        event.data.target || ""
+    )
+    .replace(/^#/, "")
+    .trim()
+    .toLowerCase();
+
+
+    /* =================================================
+       HOME
+    ================================================= */
+
+    if (
+        target === "" ||
+        target === "home" ||
+        target === "hero" ||
+        target === "index" ||
+        target === "top"
+    ) {
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+        history.replaceState(
+            null,
+            "",
+            window.location.pathname +
+            window.location.search
+        );
+
+        return;
+    }
+
+
+    /* =================================================
+       OTHER SECTIONS
+    ================================================= */
+
+    const frame = targets[target];
+
+    if (!frame) {
+        return;
+    }
+
+
+    const frameTop =
+        frame.getBoundingClientRect().top +
+        window.scrollY;
+
+
+    window.scrollTo({
+        top: Math.max(0, frameTop),
+        behavior: "smooth"
+    });
+
+
+    history.pushState(
+        null,
+        "",
+        "#" + target
+    );
+
+});
+ 
+
+
+    </script>
+
+</body>
+</html>
+ 
