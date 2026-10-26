@@ -1991,9 +1991,8 @@ button{
         </h1>
 
         <p class="hero-description">
-            Have an idea, project or brand that needs movement?
-            Tell me what you have in mind and let's turn your
-            vision into a premium visual experience.
+            Get in touch about full-stack web development,
+            Flutter applications, e-commerce or software projects.
         </p>
 
     </section>
@@ -2025,9 +2024,8 @@ button{
                 </h2>
 
                 <p class="info-description">
-                    Whether you need motion graphics, branding,
-                    logo animation or a complete visual identity,
-                    I'm always open to creative conversations.
+                    I'm a Full-Stack Web Developer and Flutter
+                    Developer based in Sahiwal, Pakistan.
                 </p>
 
 
@@ -2047,10 +2045,10 @@ button{
                             </span>
 
                             <a
-                                href="mailto:your@email.com"
+                                href="mailto:rajpootdanishali3@gmail.com"
                                 class="detail-value"
                             >
-                                your@email.com
+                                rajpootdanishali3@gmail.com
                             </a>
 
                         </div>
@@ -2071,10 +2069,10 @@ button{
                             </span>
 
                             <a
-                                href="tel:+92XXXXXXXXXX"
+                                href="tel:+923267580562"
                                 class="detail-value"
                             >
-                                +92 XXX XXXXXXX
+                                +92 326 7580562
                             </a>
 
                         </div>
@@ -2095,7 +2093,7 @@ button{
                             </span>
 
                             <span class="detail-value">
-                                Pakistan
+                                Sahiwal, Pakistan
                             </span>
 
                         </div>
@@ -2112,12 +2110,37 @@ button{
                         <div class="detail-text">
 
                             <span class="detail-label">
-                                Availability
+                                Experience
                             </span>
 
                             <span class="detail-value">
-                                Available for creative projects
+                                1.5 years web · 5 months mobile
                             </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="contact-detail">
+
+                        <div class="detail-icon">
+                            in
+                        </div>
+
+                        <div class="detail-text">
+
+                            <span class="detail-label">
+                                LinkedIn
+                            </span>
+
+                            <a
+                                href="https://linkedin.com/in/danish-ali-9963a8415"
+                                class="detail-value"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                linkedin.com/in/danish-ali-9963a8415
+                            </a>
 
                         </div>
 
@@ -2297,8 +2320,8 @@ button{
                     class="success-message"
                     id="successMessage"
                 >
-                    ✦ Message ready! Your form has been
-                    validated successfully.
+                    Your email app should open with the message ready to send.
+                    Sending is not automatic.
                 </div>
 
             </form>
@@ -2341,16 +2364,16 @@ button{
                     </a>
 
                     <p class="footer-description">
-                        Graphic Motion Specialist creating premium
-                        motion, branding and visual experiences that
-                        make brands memorable.
+                        Full-Stack Web Developer and Flutter Developer
+                        building responsive websites and cross-platform
+                        mobile applications.
                     </p>
 
                     <div class="footer-status">
 
                         <span class="status-dot"></span>
 
-                        Available for creative projects
+                        Sahiwal, Pakistan
 
                     </div>
 
@@ -2396,24 +2419,24 @@ button{
                         Services
                     </h4>
 
-                    <a href="#">
-                        Motion Graphics
+                    <a href="service.html">
+                        Web Development
                     </a>
 
-                    <a href="#">
-                        Logo Animation
+                    <a href="service.html">
+                        Flutter Apps
                     </a>
 
-                    <a href="#">
-                        Social Media Motion
+                    <a href="service.html">
+                        E-Commerce
                     </a>
 
-                    <a href="#">
-                        3D Design
+                    <a href="service.html">
+                        WordPress
                     </a>
 
-                    <a href="#">
-                        Brand Motion
+                    <a href="service.html">
+                        Mobile Apps
                     </a>
 
                 </div>
@@ -2427,23 +2450,25 @@ button{
                         Let's Connect
                     </h4>
 
-                    <a href="mailto:your@email.com">
-                        your@email.com
+                    <a href="mailto:rajpootdanishali3@gmail.com">
+                        rajpootdanishali3@gmail.com
                     </a>
 
-                    <a href="tel:+92XXXXXXXXXX">
-                        +92 XXX XXXXXXX
+                    <a href="tel:+923267580562">
+                        +92 326 7580562
                     </a>
 
                     <span>
-                        Pakistan
+                        Sahiwal, Pakistan
                     </span>
 
                     <a
-                        href="#"
+                        href="https://linkedin.com/in/danish-ali-9963a8415"
                         class="footer-talk"
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >
-                        Start a Project
+                        LinkedIn Profile
 
                         <span>
                             ↗
@@ -2782,29 +2807,18 @@ form.addEventListener(
         }
 
 
-        /* SHOW SUCCESS */
+        const subjectLine =
+            encodeURIComponent(subject.value.trim());
+
+        const body =
+            encodeURIComponent(
+                `Name: ${name.value.trim()}\nEmail: ${email.value.trim()}\n\n${message.value.trim()}`
+            );
 
         successMessage.classList.add("show");
 
-
-        /* DEMO RESET */
-
-        setTimeout(() => {
-
-            form.reset();
-
-        }, 300);
-
-
-        /* REMOVE MESSAGE AFTER DELAY */
-
-        setTimeout(() => {
-
-            successMessage.classList.remove(
-                "show"
-            );
-
-        }, 5000);
+        window.location.href =
+            `mailto:rajpootdanishali3@gmail.com?subject=${subjectLine}&body=${body}`;
 
     }
 );
