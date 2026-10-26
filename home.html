@@ -96,22 +96,6 @@
     }
     .links a:hover{color:var(--navy)}
     .links a:hover::after{width:100%}
-    .nav-cta{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-width:120px;
-      padding:11px 17px;
-      border-radius:999px;
-      background:var(--navy);
-      color:#fff;
-      font-size:12px;
-      font-weight:700;
-      letter-spacing:.03em;
-      box-shadow:0 10px 28px rgba(7,21,37,.14);
-      transition:.3s ease;
-    }
-    .nav-cta:hover{transform:translateY(-2px);background:var(--navy-2)}
     .menu-btn{
       display:none;
       border:0;background:transparent;
@@ -392,7 +376,6 @@
     /* ---------- RESPONSIVE ---------- */
     @media(max-width:900px){
       .links{gap:20px}
-      .nav-cta{display:none}
       .hero{
         grid-template-columns:1fr;
         padding-top:48px;
@@ -638,7 +621,6 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
 
-      <a class="nav-cta" href="#contact">Let's Talk</a>
       <button class="menu-btn" id="menuBtn" aria-label="Open navigation">☰</button>
     </nav>
   </header>
@@ -741,7 +723,7 @@ if (menuBtn && navLinks) {
 /* =========================================================
    NAVIGATION TO PARENT INDEX.HTML
 ========================================================= */
-document.querySelectorAll(".links a, .nav-cta, .brand").forEach(link => {
+document.querySelectorAll(".links a, .brand").forEach(link => {
 
     link.addEventListener("click", function (e) {
 
