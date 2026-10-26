@@ -475,6 +475,8 @@ button{
     flex-direction:column;
 
     gap:4px;
+
+    min-width:0;
 }
 
 .detail-label{
@@ -497,6 +499,8 @@ button{
     font-size:12px;
 
     font-weight:600;
+
+    overflow-wrap:anywhere;
 }
 
 .detail-value:hover{
@@ -1736,7 +1740,7 @@ button{
     }
 
     .contact-info{
-        min-height:570px;
+        min-height:0;
 
         padding:
             34px 27px;
@@ -1796,11 +1800,7 @@ button{
     }
 
     .orbit-scene{
-        right:-30px;
-        bottom:-15px;
-
-        transform:
-            scale(.85);
+        display:none;
     }
 
     .footer-inner{
@@ -1881,7 +1881,7 @@ button{
     }
 
     .contact-info{
-        min-height:550px;
+        min-height:0;
 
         padding:
             30px 22px;
@@ -1930,13 +1930,6 @@ button{
         font-size:25px;
     }
 
-    .orbit-scene{
-        transform:
-            scale(.72);
-
-        right:-48px;
-        bottom:-28px;
-    }
 }
 
 
@@ -2114,7 +2107,8 @@ button{
                             </span>
 
                             <span class="detail-value">
-                                1.5 years web · 5 months mobile
+                                1.5 years web<br>
+                                5 months mobile
                             </span>
 
                         </div>
